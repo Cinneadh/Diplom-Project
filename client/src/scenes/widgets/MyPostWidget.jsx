@@ -62,7 +62,7 @@ const MyPostWidget = ({ picturePath }) => {
       <FlexBetween gap="1.5rem">
         <UserImage image={picturePath} />
         <InputBase
-          placeholder="What's on your mind..."
+          placeholder="Що у вас на думці..."
           onChange={(e) => setPost(e.target.value)}
           value={post}
           sx={{
@@ -96,7 +96,7 @@ const MyPostWidget = ({ picturePath }) => {
                 >
                   <input {...getInputProps()} />
                   {!image ? (
-                    <p>Add Image Here</p>
+                    <p>Додати зображення тут</p>
                   ) : (
                     <FlexBetween>
                       <Typography>{image.name}</Typography>
@@ -127,7 +127,7 @@ const MyPostWidget = ({ picturePath }) => {
             color={mediumMain}
             sx={{ "&:hover": { cursor: "pointer", color: medium } }}
           >
-            Image
+            Зображення
           </Typography>
         </FlexBetween>
 
@@ -135,17 +135,17 @@ const MyPostWidget = ({ picturePath }) => {
           <>
             <FlexBetween gap="0.25rem">
               <GifBoxOutlined sx={{ color: mediumMain }} />
-              <Typography color={mediumMain}>Clip</Typography>
+              <Typography color={mediumMain}>Кліп</Typography>
             </FlexBetween>
 
             <FlexBetween gap="0.25rem">
               <AttachFileOutlined sx={{ color: mediumMain }} />
-              <Typography color={mediumMain}>Attachment</Typography>
+              <Typography color={mediumMain}>Вкладення</Typography>
             </FlexBetween>
 
             <FlexBetween gap="0.25rem">
               <MicOutlined sx={{ color: mediumMain }} />
-              <Typography color={mediumMain}>Audio</Typography>
+              <Typography color={mediumMain}>Аудіо</Typography>
             </FlexBetween>
           </>
         ) : (
@@ -163,7 +163,7 @@ const MyPostWidget = ({ picturePath }) => {
             borderRadius: "3rem",
           }}
         >
-          POST
+          Запостити
         </Button>
       </FlexBetween>
     </WidgetWrapper>

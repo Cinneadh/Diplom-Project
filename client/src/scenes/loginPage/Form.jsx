@@ -17,18 +17,18 @@ import Dropzone from "react-dropzone";
 import FlexBetween from "components/FlexBetween";
 
 const registerSchema = yup.object().shape({
-  firstName: yup.string().required("required"),
-  lastName: yup.string().required("required"),
-  email: yup.string().email("invalid email").required("required"),
-  password: yup.string().required("required"),
-  location: yup.string().required("required"),
-  occupation: yup.string().required("required"),
-  picture: yup.string().required("required"),
+  firstName: yup.string().required("очікується"),
+  lastName: yup.string().required("очікується"),
+  email: yup.string().email("недійсна електронна адреса").required("очікується"),
+  password: yup.string().required("очікується"),
+  location: yup.string().required("очікується"),
+  occupation: yup.string().required("очікується"),
+  picture: yup.string().required("очікується"),
 });
 
 const loginSchema = yup.object().shape({
-  email: yup.string().email("invalid email").required("required"),
-  password: yup.string().required("required"),
+  email: yup.string().email("недійсна електронна адреса").required("очікується"),
+  password: yup.string().required("очікується"),
 });
 
 const initialValuesRegister = {
@@ -130,7 +130,7 @@ const Form = () => {
             {isRegister && (
               <>
                 <TextField
-                  label="First Name"
+                  label="Ім'я"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.firstName}
@@ -142,7 +142,7 @@ const Form = () => {
                   sx={{ gridColumn: "span 2" }}
                 />
                 <TextField
-                  label="Last Name"
+                  label="Прізвище"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.lastName}
@@ -152,7 +152,7 @@ const Form = () => {
                   sx={{ gridColumn: "span 2" }}
                 />
                 <TextField
-                  label="Location"
+                  label="Місце проживання"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.location}
@@ -162,7 +162,7 @@ const Form = () => {
                   sx={{ gridColumn: "span 4" }}
                 />
                 <TextField
-                  label="Occupation"
+                  label="Рід занять"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.occupation}
@@ -195,7 +195,7 @@ const Form = () => {
                       >
                         <input {...getInputProps()} />
                         {!values.picture ? (
-                          <p>Add Picture Here</p>
+                          <p>Додати зображення тут</p>
                         ) : (
                           <FlexBetween>
                             <Typography>{values.picture.name}</Typography>
@@ -220,7 +220,7 @@ const Form = () => {
               sx={{ gridColumn: "span 4" }}
             />
             <TextField
-              label="Password"
+              label="Пароль"
               type="password"
               onBlur={handleBlur}
               onChange={handleChange}
@@ -245,7 +245,7 @@ const Form = () => {
                 "&:hover": { color: palette.primary.main },
               }}
             >
-              {isLogin ? "LOGIN" : "REGISTER"}
+              {isLogin ? "ВХІД" : "ЗАРЕЄСТРУВАТИСЯ"}
             </Button>
             <Typography
               onClick={() => {
@@ -262,8 +262,8 @@ const Form = () => {
               }}
             >
               {isLogin
-                ? "Don't have an account? Sign Up here."
-                : "Already have an account? Login here."}
+                ? "Немає облікового запису? Зареєструйтесь тут."
+                : "Вже є аккаунт? Увійдіть тут."}
             </Typography>
           </Box>
         </form>
